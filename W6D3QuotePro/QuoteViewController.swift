@@ -8,12 +8,13 @@
 
 import UIKit
 
-protocol QuoteViewProtocol:class {
+protocol QuoteProtocol:class {
   func save(quote:Quote)
 }
 
 class QuoteViewController: UIViewController {
-  weak var delegate:QuoteViewProtocol?
+  weak var delegate:QuoteProtocol?
+  var photoDict = [[String:AnyObject]]()
   var photoCollection = [Photo]()
   var quote = Quote()
   
@@ -21,14 +22,27 @@ class QuoteViewController: UIViewController {
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
+    
+    getRandomQuote()
     getRandomImages()
-    quote = getRandomQuote()
-    quote.photo = getRandomImage()
-    view.backgroundColor = UIColor.greenColor()
+    view.backgroundColor = UIColor.lightGrayColor()
   }
-  
+  //MARK: Actions
   @IBAction func save(sender: AnyObject) {
     if let delegate = self.delegate{
+      if let currentView = self.view as? QuoteView{
+        currentView.saveButton.alpha = 0
+        currentView.cancelButton.alpha = 0
+        currentView.imageButton.alpha = 0
+        currentView.quoteButton.alpha = 0
+        currentView.textColorButton.alpha = 0
+      }
+      UIGraphicsBeginImageContextWithOptions(view.bounds.size, true, 0);
+      view.drawViewHierarchyInRect(view.bounds, afterScreenUpdates: true)
+      let image = UIGraphicsGetImageFromCurrentImageContext();
+      UIGraphicsEndImageContext();
+      quote.photo = Photo(image: image, imageURL: "")
+    
       delegate.save(quote)
     } else{
       print("There is no delegate")
@@ -40,25 +54,70 @@ class QuoteViewController: UIViewController {
     dismissViewControllerAnimated(true, completion: nil)
   }
   
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
-  func getRandomQuote()->Quote{
-    return Quote()
+  @IBAction func newImage(sender: AnyObject) {
+    getRandomImage()
   }
-  func getRandomImage()->Photo{
-    let randomNumber = Int(arc4random_uniform(UInt32(photoCollection.count)))
-    return photoCollection[randomNumber]
+  
+  @IBAction func newQuote(sender: AnyObject) {
+    getRandomQuote()
+  }
+  
+  @IBAction func changeTextColor(sender: AnyObject) {
+    if let currentView = self.view as? QuoteView{
+      currentView.toggleTextColor()
+    }
+  }
+  
+  //MARK: Helper methods
+  func setupWithQuote(quote:Quote){
+    if let currentView = self.view as? QuoteView{
+    currentView.quoteTextLabel.text = quote.text
+    currentView.quoteByLabel.text = quote.by
+    currentView.imageView.image = quote.photo?.image
+    }
+  }
+  
+  func getRandomQuote(){
+    DataManager.getQuote { (quote) in
+      dispatch_async(dispatch_get_main_queue(), {
+        let currentView = self.view as?QuoteView
+        if let quote = quote{
+          currentView?.quoteTextLabel.text = quote.text
+          currentView?.quoteByLabel.text = quote.by
+          self.quote.text = quote.text
+          self.quote.by = quote.by
+        }
+      })
+    }
+  }
+  func getRandomImage(){
+    if photoDict.count == 0{
+      getRandomImages()
+    }
+    if photoDict.count > 0{
+      let randomNumber = Int(arc4random_uniform(UInt32(photoDict.count) - 1))
+      var imageURLString = photoDict[randomNumber]["post_url"] as? String
+      
+      imageURLString = "https://unsplash.it/200/300/?image=\(randomNumber)"
+      print(imageURLString)
+      
+      DataManager.getImageUsingURL(NSURL(string:imageURLString!)!, completion: { (image) in
+        dispatch_async(dispatch_get_main_queue(), {
+          print("----printing image-----")
+          let currentView = self.view as?QuoteView
+          print(image)
+          currentView?.imageView.image = image
+          self.view.layoutIfNeeded()
+        })
+      })
+    }
   }
   func getRandomImages(){
-    //    photoCollection
+    DataManager.getImages { (imagesDict) in
+      self.photoDict = imagesDict
+      self.getRandomImage()
+      
+    }
   }
   
 }

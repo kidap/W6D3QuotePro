@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16C1DC659EB3084A100CC4F9 /* Pods_W6D3QuotePro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F857AEF6F77359A598BCC254 /* Pods_W6D3QuotePro.framework */; };
 		A7A4965D1CBE9207006A321F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A4965C1CBE9207006A321F /* AppDelegate.swift */; };
 		A7A4965F1CBE9207006A321F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A4965E1CBE9207006A321F /* ViewController.swift */; };
 		A7A496621CBE9207006A321F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A496601CBE9207006A321F /* Main.storyboard */; };
@@ -17,9 +18,11 @@
 		A7A496751CBE979D006A321F /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A496741CBE979D006A321F /* QuoteView.swift */; };
 		A7A496781CBE98B4006A321F /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A496771CBE98B4006A321F /* Quote.swift */; };
 		A7A4967A1CBE98C0006A321F /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A496791CBE98C0006A321F /* Photo.swift */; };
+		A7A4967D1CBEA294006A321F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A4967C1CBEA294006A321F /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A44CDA3D0A8BD8B300E63861 /* Pods-W6D3QuotePro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-W6D3QuotePro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-W6D3QuotePro/Pods-W6D3QuotePro.debug.xcconfig"; sourceTree = "<group>"; };
 		A7A496591CBE9207006A321F /* W6D3QuotePro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = W6D3QuotePro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A4965C1CBE9207006A321F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7A4965E1CBE9207006A321F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +35,9 @@
 		A7A496741CBE979D006A321F /* QuoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
 		A7A496771CBE98B4006A321F /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		A7A496791CBE98C0006A321F /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		A7A4967C1CBEA294006A321F /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		DE8D937870C8F617B843539A /* Pods-W6D3QuotePro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-W6D3QuotePro.release.xcconfig"; path = "Pods/Target Support Files/Pods-W6D3QuotePro/Pods-W6D3QuotePro.release.xcconfig"; sourceTree = "<group>"; };
+		F857AEF6F77359A598BCC254 /* Pods_W6D3QuotePro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_W6D3QuotePro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +45,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16C1DC659EB3084A100CC4F9 /* Pods_W6D3QuotePro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		91A3FB9CABCE63BE3FFE81B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F857AEF6F77359A598BCC254 /* Pods_W6D3QuotePro.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A7A496501CBE9207006A321F = {
 			isa = PBXGroup;
 			children = (
 				A7A4965B1CBE9207006A321F /* W6D3QuotePro */,
 				A7A4965A1CBE9207006A321F /* Products */,
+				C8D8EED31F014F34ABA6B99F /* Pods */,
+				91A3FB9CABCE63BE3FFE81B9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +84,7 @@
 				A7A4966F1CBE9636006A321F /* View */,
 				A7A4966E1CBE962E006A321F /* View Controllers */,
 				A7A496761CBE989E006A321F /* Model */,
+				A7A4967B1CBEA268006A321F /* Helper Classes */,
 				A7A4965C1CBE9207006A321F /* AppDelegate.swift */,
 				A7A496601CBE9207006A321F /* Main.storyboard */,
 				A7A496631CBE9207006A321F /* Assets.xcassets */,
@@ -103,6 +121,23 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		A7A4967B1CBEA268006A321F /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A7A4967C1CBEA294006A321F /* DataManager.swift */,
+			);
+			name = "Helper Classes";
+			sourceTree = "<group>";
+		};
+		C8D8EED31F014F34ABA6B99F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A44CDA3D0A8BD8B300E63861 /* Pods-W6D3QuotePro.debug.xcconfig */,
+				DE8D937870C8F617B843539A /* Pods-W6D3QuotePro.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,9 +145,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7A4966B1CBE9207006A321F /* Build configuration list for PBXNativeTarget "W6D3QuotePro" */;
 			buildPhases = (
+				D9E6BE2BEC093A2CE5F4D1DF /* Check Pods Manifest.lock */,
 				A7A496551CBE9207006A321F /* Sources */,
 				A7A496561CBE9207006A321F /* Frameworks */,
 				A7A496571CBE9207006A321F /* Resources */,
+				233A1E32BE5630AD68A72961 /* Embed Pods Frameworks */,
+				C1C1F214CA7D9FF3C01861FD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -171,6 +209,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		233A1E32BE5630AD68A72961 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-W6D3QuotePro/Pods-W6D3QuotePro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1C1F214CA7D9FF3C01861FD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-W6D3QuotePro/Pods-W6D3QuotePro-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9E6BE2BEC093A2CE5F4D1DF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A7A496551CBE9207006A321F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -179,6 +265,7 @@
 				A7A4967A1CBE98C0006A321F /* Photo.swift in Sources */,
 				A7A496721CBE9781006A321F /* QuoteViewController.swift in Sources */,
 				A7A4965F1CBE9207006A321F /* ViewController.swift in Sources */,
+				A7A4967D1CBEA294006A321F /* DataManager.swift in Sources */,
 				A7A4965D1CBE9207006A321F /* AppDelegate.swift in Sources */,
 				A7A496781CBE98B4006A321F /* Quote.swift in Sources */,
 				A7A496751CBE979D006A321F /* QuoteView.swift in Sources */,
@@ -294,6 +381,7 @@
 		};
 		A7A4966C1CBE9207006A321F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A44CDA3D0A8BD8B300E63861 /* Pods-W6D3QuotePro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = W6D3QuotePro/Info.plist;
@@ -305,6 +393,7 @@
 		};
 		A7A4966D1CBE9207006A321F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE8D937870C8F617B843539A /* Pods-W6D3QuotePro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = W6D3QuotePro/Info.plist;
@@ -333,6 +422,7 @@
 				A7A4966D1CBE9207006A321F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

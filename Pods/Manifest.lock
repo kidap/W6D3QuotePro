@@ -1,0 +1,25 @@
+PODS:
+  - Alamofire (3.3.1)
+  - FLAnimatedImage (1.0.12)
+  - Nuke (3.0.0)
+  - Nuke-Alamofire-Plugin (0.6.0):
+    - Alamofire (~> 3.0)
+    - Nuke (~> 3.0)
+  - Nuke-AnimatedImage-Plugin (1.0.0):
+    - FLAnimatedImage (~> 1.0)
+    - Nuke (~> 3.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Nuke
+  - Nuke-Alamofire-Plugin
+  - Nuke-AnimatedImage-Plugin
+
+SPEC CHECKSUMS:
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  Nuke: 0bf58cc17da620fbfd9ecf67a2dd8d65ed50635e
+  Nuke-Alamofire-Plugin: 410bdb98360c586f8ca736e04dbba78fa1294aae
+  Nuke-AnimatedImage-Plugin: 5a35f5a38dcd6c9559225de1c80ac7e758bd0ef8
+
+COCOAPODS: 0.39.0

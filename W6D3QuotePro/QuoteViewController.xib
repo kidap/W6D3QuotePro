@@ -14,34 +14,63 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="QuoteView" customModule="W6D3QuotePro" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <userGuides>
+                <userLayoutGuide location="299" affinity="minY"/>
+                <userLayoutGuide location="299" affinity="minY"/>
+            </userGuides>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K1u-At-o8k">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdC-wt-fgu">
-                    <rect key="frame" x="30" y="289" width="540" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <rect key="frame" x="30" y="283.5" width="540" height="33.5"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
+                    <color key="shadowColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <size key="shadowOffset" width="1" height="1"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o57-Ge-FBW">
-                    <rect key="frame" x="291" y="318" width="19" height="21"/>
+                    <rect key="frame" x="290.5" y="325.5" width="20" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
+                    <color key="shadowColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <size key="shadowOffset" width="1" height="1"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0d-Nn-bcX">
-                    <rect key="frame" x="8" y="562" width="48" height="30"/>
-                    <state key="normal" title="Cancel"/>
+                    <rect key="frame" x="8" y="562" width="45" height="30"/>
+                    <state key="normal" title="cancel"/>
                     <connections>
                         <action selector="cancel:" destination="-1" eventType="touchUpInside" id="wUT-Qn-AEq"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAH-WL-Cub">
-                    <rect key="frame" x="552" y="562" width="34" height="30"/>
-                    <state key="normal" title="Save"/>
+                    <rect key="frame" x="554" y="562" width="32" height="30"/>
+                    <state key="normal" title="save"/>
                     <connections>
                         <action selector="save:" destination="-1" eventType="touchUpInside" id="Vrp-yd-iMW"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAw-5J-hg1">
+                    <rect key="frame" x="502" y="562" width="42" height="30"/>
+                    <state key="normal" title="image"/>
+                    <connections>
+                        <action selector="newImage:" destination="-1" eventType="touchUpInside" id="9tf-0W-feI"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lH-UG-bXU">
+                    <rect key="frame" x="452" y="562" width="40" height="30"/>
+                    <state key="normal" title="quote"/>
+                    <connections>
+                        <action selector="newQuote:" destination="-1" eventType="touchUpInside" id="sHT-rm-odT"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmT-CX-jPa">
+                    <rect key="frame" x="381" y="562" width="63" height="30"/>
+                    <state key="normal" title="textColor"/>
+                    <connections>
+                        <action selector="changeTextColor:" destination="-1" eventType="touchUpInside" id="bMh-C1-19O"/>
                     </connections>
                 </button>
             </subviews>
@@ -50,22 +79,33 @@
                 <constraint firstItem="o57-Ge-FBW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1y4-GW-2Po"/>
                 <constraint firstAttribute="bottom" secondItem="u0d-Nn-bcX" secondAttribute="bottom" constant="8" id="69n-F3-lgj"/>
                 <constraint firstAttribute="trailing" secondItem="sAH-WL-Cub" secondAttribute="trailing" constant="14" id="FrA-8K-SpA"/>
+                <constraint firstItem="sAH-WL-Cub" firstAttribute="leading" secondItem="jAw-5J-hg1" secondAttribute="trailing" constant="10" id="LRz-Be-LWp"/>
                 <constraint firstItem="RdC-wt-fgu" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="NID-LD-QIq"/>
+                <constraint firstItem="jAw-5J-hg1" firstAttribute="centerY" secondItem="sAH-WL-Cub" secondAttribute="centerY" id="O0R-F8-J3P"/>
                 <constraint firstItem="K1u-At-o8k" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ptk-Ke-1UO"/>
+                <constraint firstItem="3lH-UG-bXU" firstAttribute="leading" secondItem="FmT-CX-jPa" secondAttribute="trailing" constant="10" id="SIR-qg-6Co"/>
                 <constraint firstAttribute="trailing" secondItem="K1u-At-o8k" secondAttribute="trailing" id="Unu-uB-5SM"/>
                 <constraint firstAttribute="bottom" secondItem="sAH-WL-Cub" secondAttribute="bottom" constant="8" id="YWJ-ug-Ul8"/>
                 <constraint firstItem="RdC-wt-fgu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="a8k-JI-Ybx"/>
+                <constraint firstItem="3lH-UG-bXU" firstAttribute="centerY" secondItem="jAw-5J-hg1" secondAttribute="centerY" id="am7-SA-hKJ"/>
                 <constraint firstItem="RdC-wt-fgu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eTs-Is-bRZ"/>
                 <constraint firstAttribute="bottom" secondItem="K1u-At-o8k" secondAttribute="bottom" id="fWF-n1-mFu"/>
                 <constraint firstItem="K1u-At-o8k" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hn3-F9-RfR"/>
                 <constraint firstAttribute="trailing" secondItem="RdC-wt-fgu" secondAttribute="trailing" constant="30" id="hq7-5M-fCD"/>
+                <constraint firstItem="FmT-CX-jPa" firstAttribute="centerY" secondItem="3lH-UG-bXU" secondAttribute="centerY" id="l10-yS-QAZ"/>
                 <constraint firstItem="o57-Ge-FBW" firstAttribute="top" secondItem="RdC-wt-fgu" secondAttribute="bottom" constant="8" id="lBL-EF-oZx"/>
+                <constraint firstItem="jAw-5J-hg1" firstAttribute="leading" secondItem="3lH-UG-bXU" secondAttribute="trailing" constant="10" id="o0T-yE-uoL"/>
                 <constraint firstItem="u0d-Nn-bcX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="qge-T0-Nj1"/>
             </constraints>
             <connections>
+                <outlet property="cancelButton" destination="u0d-Nn-bcX" id="tSe-72-l4f"/>
+                <outlet property="imageButton" destination="jAw-5J-hg1" id="PSb-f7-JHa"/>
                 <outlet property="imageView" destination="K1u-At-o8k" id="FaG-XX-KAp"/>
+                <outlet property="quoteButton" destination="3lH-UG-bXU" id="FWk-YJ-ENg"/>
                 <outlet property="quoteByLabel" destination="o57-Ge-FBW" id="WTN-Iv-wn8"/>
                 <outlet property="quoteTextLabel" destination="RdC-wt-fgu" id="l2J-wU-Ka2"/>
+                <outlet property="saveButton" destination="sAH-WL-Cub" id="Uh0-lQ-9PP"/>
+                <outlet property="textColorButton" destination="FmT-CX-jPa" id="FdU-hV-yKW"/>
             </connections>
         </view>
     </objects>
