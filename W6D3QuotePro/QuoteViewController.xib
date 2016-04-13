@@ -105,6 +105,9 @@
                 <constraint firstItem="jAw-5J-hg1" firstAttribute="leading" secondItem="3lH-UG-bXU" secondAttribute="trailing" constant="10" id="o0T-yE-uoL"/>
                 <constraint firstItem="u0d-Nn-bcX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="qge-T0-Nj1"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
         </view>
     </objects>
 </document>

@@ -31,7 +31,7 @@ class ViewController: UIViewController {
   
   @IBAction func createNew(sender: AnyObject) {
     let destinationVC = QuoteViewController()
-    destinationVC.quote = Quote()
+//    destinationVC.quote = Quote()
     destinationVC.delegate = self
     presentViewController(destinationVC, animated: true, completion: nil)
   }
