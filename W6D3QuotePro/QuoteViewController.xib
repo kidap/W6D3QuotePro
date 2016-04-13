@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuoteViewController" customModule="W6D3QuotePro" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="QuoteView" customModule="W6D3QuotePro" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K1u-At-o8k">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdC-wt-fgu">
+                    <rect key="frame" x="30" y="289" width="540" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o57-Ge-FBW">
+                    <rect key="frame" x="291" y="318" width="19" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0d-Nn-bcX">
+                    <rect key="frame" x="8" y="562" width="48" height="30"/>
+                    <state key="normal" title="Cancel"/>
+                    <connections>
+                        <action selector="cancel:" destination="-1" eventType="touchUpInside" id="wUT-Qn-AEq"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAH-WL-Cub">
+                    <rect key="frame" x="552" y="562" width="34" height="30"/>
+                    <state key="normal" title="Save"/>
+                    <connections>
+                        <action selector="save:" destination="-1" eventType="touchUpInside" id="Vrp-yd-iMW"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="o57-Ge-FBW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1y4-GW-2Po"/>
+                <constraint firstAttribute="bottom" secondItem="u0d-Nn-bcX" secondAttribute="bottom" constant="8" id="69n-F3-lgj"/>
+                <constraint firstAttribute="trailing" secondItem="sAH-WL-Cub" secondAttribute="trailing" constant="14" id="FrA-8K-SpA"/>
+                <constraint firstItem="RdC-wt-fgu" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="NID-LD-QIq"/>
+                <constraint firstItem="K1u-At-o8k" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ptk-Ke-1UO"/>
+                <constraint firstAttribute="trailing" secondItem="K1u-At-o8k" secondAttribute="trailing" id="Unu-uB-5SM"/>
+                <constraint firstAttribute="bottom" secondItem="sAH-WL-Cub" secondAttribute="bottom" constant="8" id="YWJ-ug-Ul8"/>
+                <constraint firstItem="RdC-wt-fgu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="a8k-JI-Ybx"/>
+                <constraint firstItem="RdC-wt-fgu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eTs-Is-bRZ"/>
+                <constraint firstAttribute="bottom" secondItem="K1u-At-o8k" secondAttribute="bottom" id="fWF-n1-mFu"/>
+                <constraint firstItem="K1u-At-o8k" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hn3-F9-RfR"/>
+                <constraint firstAttribute="trailing" secondItem="RdC-wt-fgu" secondAttribute="trailing" constant="30" id="hq7-5M-fCD"/>
+                <constraint firstItem="o57-Ge-FBW" firstAttribute="top" secondItem="RdC-wt-fgu" secondAttribute="bottom" constant="8" id="lBL-EF-oZx"/>
+                <constraint firstItem="u0d-Nn-bcX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="qge-T0-Nj1"/>
+            </constraints>
+            <connections>
+                <outlet property="imageView" destination="K1u-At-o8k" id="FaG-XX-KAp"/>
+                <outlet property="quoteByLabel" destination="o57-Ge-FBW" id="WTN-Iv-wn8"/>
+                <outlet property="quoteTextLabel" destination="RdC-wt-fgu" id="l2J-wU-Ka2"/>
+            </connections>
+        </view>
+    </objects>
+</document>
