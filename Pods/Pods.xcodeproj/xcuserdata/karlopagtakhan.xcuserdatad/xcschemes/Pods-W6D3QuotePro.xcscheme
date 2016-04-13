@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '818ADA7AF3B6F50795A1E045'
+               BlueprintIdentifier = 'A0C587D455B2E9B222AFBE18'
                BlueprintName = 'Pods-W6D3QuotePro'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_W6D3QuotePro.framework'>

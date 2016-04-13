@@ -9,11 +9,57 @@
 import Foundation
 import Alamofire
 import Nuke
+import RealmSwift
 
+
+class QuoteRealm: Object {
+  dynamic var text = ""
+  dynamic var by = ""
+  dynamic var photo: NSData?
+}
 
 class DataManager{
   static var quoteUrlString = "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json"
   static var imageUrlString = "https://unsplash.it/list"
+  
+  
+  class func saveToRealm(inputQuote:Quote){
+    // Create a Person object
+    let quote = QuoteRealm()
+    quote.text = inputQuote.text
+    quote.by = inputQuote.by
+    if let image = inputQuote.photo!.image{
+      quote.photo = UIImagePNGRepresentation(image)
+    }
+    
+    // Get the default Realm
+    let realm = try! Realm()
+    // You only need to do this once (per thread)
+    
+    // Add to the Realm inside a transaction
+    try! realm.write {
+      realm.add(quote)
+    }
+  }
+  
+  class func getFromRealm()->[Quote] {
+    let realm = try! Realm()
+    let allQuotes = realm.objects(QuoteRealm)
+    var returnQuotes = [Quote]()
+    
+    for quote in allQuotes{
+      let photo = Photo()
+      
+      if let image =  quote.photo{
+        photo.image = UIImage(data: image)
+      }
+      returnQuotes.append(Quote(text: quote.text, by: quote.by, photo: photo))
+    }
+    
+    return returnQuotes
+  }
+  
+  
   
   class func getQuote(completion: (Quote?)->Void ){
     print(quoteUrlString)

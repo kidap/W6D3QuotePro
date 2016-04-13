@@ -13,6 +13,15 @@ protocol QuoteProtocol:class {
 }
 
 class QuoteViewController: UIViewController {
+  @IBOutlet var imageView: UIImageView!
+  @IBOutlet var quoteTextLabel: UILabel!
+  @IBOutlet var quoteByLabel: UILabel!
+  @IBOutlet var cancelButton: UIButton!
+  @IBOutlet var saveButton: UIButton!
+  @IBOutlet var quoteButton: UIButton!
+  @IBOutlet var imageButton: UIButton!
+  @IBOutlet var textColorButton: UIButton!
+  
   weak var delegate:QuoteProtocol?
   var photoDict = [[String:AnyObject]]()
   var photoCollection = [Photo]()
@@ -26,23 +35,33 @@ class QuoteViewController: UIViewController {
     getRandomQuote()
     getRandomImages()
     view.backgroundColor = UIColor.lightGrayColor()
+    
+    setButtonProperties(saveButton)
+    setButtonProperties(cancelButton)
+    setButtonProperties(quoteButton)
+    setButtonProperties(imageButton)
+    setButtonProperties(textColorButton)
+    
+    cancelButton.layer.shadowColor = UIColor.redColor().CGColor
+    cancelButton.layer.borderColor = UIColor.redColor().CGColor
+    cancelButton.backgroundColor = UIColor.redColor()
+    cancelButton.titleLabel?.textColor = UIColor.whiteColor()
   }
   //MARK: Actions
   @IBAction func save(sender: AnyObject) {
     if let delegate = self.delegate{
-      if let currentView = self.view as? QuoteView{
-        currentView.saveButton.alpha = 0
-        currentView.cancelButton.alpha = 0
-        currentView.imageButton.alpha = 0
-        currentView.quoteButton.alpha = 0
-        currentView.textColorButton.alpha = 0
-      }
+      saveButton.alpha = 0
+      cancelButton.alpha = 0
+      imageButton.alpha = 0
+      quoteButton.alpha = 0
+      textColorButton.alpha = 0
+      
       UIGraphicsBeginImageContextWithOptions(view.bounds.size, true, 0);
       view.drawViewHierarchyInRect(view.bounds, afterScreenUpdates: true)
       let image = UIGraphicsGetImageFromCurrentImageContext();
       UIGraphicsEndImageContext();
       quote.photo = Photo(image: image, imageURL: "")
-    
+      
       delegate.save(quote)
     } else{
       print("There is no delegate")
@@ -63,27 +82,22 @@ class QuoteViewController: UIViewController {
   }
   
   @IBAction func changeTextColor(sender: AnyObject) {
-    if let currentView = self.view as? QuoteView{
-      currentView.toggleTextColor()
-    }
+    toggleTextColor()
   }
   
   //MARK: Helper methods
   func setupWithQuote(quote:Quote){
-    if let currentView = self.view as? QuoteView{
-    currentView.quoteTextLabel.text = quote.text
-    currentView.quoteByLabel.text = quote.by
-    currentView.imageView.image = quote.photo?.image
-    }
+    quoteTextLabel.text = quote.text
+    quoteByLabel.text = quote.by
+    imageView.image = quote.photo?.image
   }
   
   func getRandomQuote(){
     DataManager.getQuote { (quote) in
       dispatch_async(dispatch_get_main_queue(), {
-        let currentView = self.view as?QuoteView
         if let quote = quote{
-          currentView?.quoteTextLabel.text = quote.text
-          currentView?.quoteByLabel.text = quote.by
+          self.quoteTextLabel.text = quote.text
+          self.quoteByLabel.text = quote.by
           self.quote.text = quote.text
           self.quote.by = quote.by
         }
@@ -104,9 +118,8 @@ class QuoteViewController: UIViewController {
       DataManager.getImageUsingURL(NSURL(string:imageURLString!)!, completion: { (image) in
         dispatch_async(dispatch_get_main_queue(), {
           print("----printing image-----")
-          let currentView = self.view as?QuoteView
           print(image)
-          currentView?.imageView.image = image
+          self.imageView.image = image
           self.view.layoutIfNeeded()
         })
       })
@@ -119,6 +132,31 @@ class QuoteViewController: UIViewController {
       
     }
   }
+  
+  func setButtonProperties(button:UIButton){
+    //button.titleLabel?.textColor = UIColor.blackColor()
+    button.layer.cornerRadius = 3
+    button.layer.borderWidth = 1
+    button.layer.borderColor = UIColor.whiteColor().CGColor
+    button.layer.shadowRadius = 3
+    button.layer.shadowColor = UIColor.grayColor().CGColor
+    button.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.75)
+  }
+  
+  func toggleTextColor(){
+    if quoteTextLabel.textColor == UIColor.blackColor(){
+      quoteTextLabel.textColor = UIColor.whiteColor()
+      quoteByLabel.textColor = UIColor.whiteColor()
+      quoteTextLabel.layer.shadowColor = UIColor.blackColor().CGColor
+      quoteByLabel.layer.shadowColor = UIColor.blackColor().CGColor
+    } else {
+      quoteTextLabel.textColor = UIColor.blackColor()
+      quoteByLabel.textColor = UIColor.blackColor()
+      quoteTextLabel.layer.shadowColor = UIColor.whiteColor().CGColor
+      quoteByLabel.layer.shadowColor = UIColor.whiteColor().CGColor
+    }
+  }
+  
 }
 
 

@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sb8-er-obh">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="655"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="661"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" clipsSubviews="YES" contentMode="scaleToFill" id="LcC-Vq-7L3">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
@@ -28,8 +28,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved Quotes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMK-1H-4fE">
-                                            <rect key="frame" x="154" y="39" width="107" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="125.5" y="33.5" width="164.5" height="32.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -71,12 +71,16 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHS-tf-gV6">
-                                <rect key="frame" x="140" y="675" width="134" height="30"/>
+                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHS-tf-gV6">
+                                <rect key="frame" x="0.0" y="661" width="414" height="75"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Oqw-un-usX"/>
+                                    <constraint firstAttribute="height" constant="75" id="g3C-l1-oVk"/>
                                 </constraints>
-                                <state key="normal" title="Create a new quote"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <state key="normal" title="Create a new quote" backgroundImage="WDF_1807187">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="createNew:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mpj-ub-0sr"/>
                                 </connections>
@@ -84,12 +88,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jHS-tf-gV6" secondAttribute="bottom" constant="31" id="1Eh-nM-jRv"/>
                             <constraint firstItem="sb8-er-obh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="6eU-TR-Vme"/>
+                            <constraint firstItem="jHS-tf-gV6" firstAttribute="top" secondItem="sb8-er-obh" secondAttribute="bottom" id="7PH-tq-Gw6"/>
                             <constraint firstAttribute="trailing" secondItem="sb8-er-obh" secondAttribute="trailing" id="BJn-ZX-z7B"/>
-                            <constraint firstItem="jHS-tf-gV6" firstAttribute="top" secondItem="sb8-er-obh" secondAttribute="bottom" constant="20" id="CEt-Hi-Z4T"/>
+                            <constraint firstItem="jHS-tf-gV6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HLx-aZ-aB4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jHS-tf-gV6" secondAttribute="bottom" id="YRb-ff-oTY"/>
                             <constraint firstItem="sb8-er-obh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nMB-hF-6BR"/>
-                            <constraint firstItem="jHS-tf-gV6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oaA-pi-gP6"/>
+                            <constraint firstAttribute="trailing" secondItem="jHS-tf-gV6" secondAttribute="trailing" id="olv-I2-xvQ"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>

@@ -89,6 +89,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-W6D3QuotePro/Nuke.framework"
   install_framework "Pods-W6D3QuotePro/NukeAlamofirePlugin.framework"
   install_framework "Pods-W6D3QuotePro/NukeAnimatedImagePlugin.framework"
+  install_framework "Pods-W6D3QuotePro/Realm.framework"
+  install_framework "Pods-W6D3QuotePro/RealmSwift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-W6D3QuotePro/Alamofire.framework"
@@ -96,4 +98,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-W6D3QuotePro/Nuke.framework"
   install_framework "Pods-W6D3QuotePro/NukeAlamofirePlugin.framework"
   install_framework "Pods-W6D3QuotePro/NukeAnimatedImagePlugin.framework"
+  install_framework "Pods-W6D3QuotePro/Realm.framework"
+  install_framework "Pods-W6D3QuotePro/RealmSwift.framework"
 fi

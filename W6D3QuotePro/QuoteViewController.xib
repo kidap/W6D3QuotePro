@@ -7,6 +7,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuoteViewController" customModule="W6D3QuotePro" customModuleProvider="target">
             <connections>
+                <outlet property="cancelButton" destination="u0d-Nn-bcX" id="Ofd-Xk-eOC"/>
+                <outlet property="imageButton" destination="jAw-5J-hg1" id="Xj7-yh-aNS"/>
+                <outlet property="imageView" destination="K1u-At-o8k" id="M4K-eM-YHJ"/>
+                <outlet property="quoteButton" destination="3lH-UG-bXU" id="Lnz-mN-qby"/>
+                <outlet property="quoteByLabel" destination="o57-Ge-FBW" id="jbJ-C1-wgh"/>
+                <outlet property="quoteTextLabel" destination="RdC-wt-fgu" id="C0Z-he-5p7"/>
+                <outlet property="saveButton" destination="sAH-WL-Cub" id="NsH-QZ-hWe"/>
+                <outlet property="textColorButton" destination="FmT-CX-jPa" id="rZ9-mq-kO6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -42,35 +50,35 @@
                     <rect key="frame" x="8" y="562" width="45" height="30"/>
                     <state key="normal" title="cancel"/>
                     <connections>
-                        <action selector="cancel:" destination="-1" eventType="touchUpInside" id="wUT-Qn-AEq"/>
+                        <action selector="cancel:" destination="-1" eventType="touchUpInside" id="Euq-nr-Wgr"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAH-WL-Cub">
                     <rect key="frame" x="554" y="562" width="32" height="30"/>
                     <state key="normal" title="save"/>
                     <connections>
-                        <action selector="save:" destination="-1" eventType="touchUpInside" id="Vrp-yd-iMW"/>
+                        <action selector="save:" destination="-1" eventType="touchUpInside" id="umU-IN-eHu"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAw-5J-hg1">
                     <rect key="frame" x="502" y="562" width="42" height="30"/>
                     <state key="normal" title="image"/>
                     <connections>
-                        <action selector="newImage:" destination="-1" eventType="touchUpInside" id="9tf-0W-feI"/>
+                        <action selector="newImage:" destination="-1" eventType="touchUpInside" id="796-BH-dOZ"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lH-UG-bXU">
                     <rect key="frame" x="452" y="562" width="40" height="30"/>
                     <state key="normal" title="quote"/>
                     <connections>
-                        <action selector="newQuote:" destination="-1" eventType="touchUpInside" id="sHT-rm-odT"/>
+                        <action selector="newQuote:" destination="-1" eventType="touchUpInside" id="ICk-4l-8jQ"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmT-CX-jPa">
                     <rect key="frame" x="381" y="562" width="63" height="30"/>
                     <state key="normal" title="textColor"/>
                     <connections>
-                        <action selector="changeTextColor:" destination="-1" eventType="touchUpInside" id="bMh-C1-19O"/>
+                        <action selector="changeTextColor:" destination="-1" eventType="touchUpInside" id="meu-nJ-Sf7"/>
                     </connections>
                 </button>
             </subviews>
@@ -97,16 +105,6 @@
                 <constraint firstItem="jAw-5J-hg1" firstAttribute="leading" secondItem="3lH-UG-bXU" secondAttribute="trailing" constant="10" id="o0T-yE-uoL"/>
                 <constraint firstItem="u0d-Nn-bcX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="qge-T0-Nj1"/>
             </constraints>
-            <connections>
-                <outlet property="cancelButton" destination="u0d-Nn-bcX" id="tSe-72-l4f"/>
-                <outlet property="imageButton" destination="jAw-5J-hg1" id="PSb-f7-JHa"/>
-                <outlet property="imageView" destination="K1u-At-o8k" id="FaG-XX-KAp"/>
-                <outlet property="quoteButton" destination="3lH-UG-bXU" id="FWk-YJ-ENg"/>
-                <outlet property="quoteByLabel" destination="o57-Ge-FBW" id="WTN-Iv-wn8"/>
-                <outlet property="quoteTextLabel" destination="RdC-wt-fgu" id="l2J-wU-Ka2"/>
-                <outlet property="saveButton" destination="sAH-WL-Cub" id="Uh0-lQ-9PP"/>
-                <outlet property="textColorButton" destination="FmT-CX-jPa" id="FdU-hV-yKW"/>
-            </connections>
         </view>
     </objects>
 </document>

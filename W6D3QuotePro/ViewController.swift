@@ -18,15 +18,15 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
+    sourceArray = DataManager.getFromRealm()
+    
     tableView.delegate = self
     tableView.dataSource = self
     
     tableView.tableHeaderView = nil
     tableView.addSubview(tableHeader)
-    
     tableView.contentInset.top = kheaderHeight
     tableView.contentOffset.y = -kheaderHeight
-    
   }
   
   @IBAction func createNew(sender: AnyObject) {
@@ -66,6 +66,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
 extension ViewController:QuoteProtocol{
   func save(quote:Quote){
     sourceArray.append(quote)
+    DataManager.saveToRealm(quote)
     print(sourceArray.count)
     tableView.reloadData()
   }

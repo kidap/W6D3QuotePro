@@ -9,6 +9,7 @@ pod "Nuke"
 pod "Nuke-Alamofire-Plugin" # optional
 pod "Nuke-AnimatedImage-Plugin" # optional
 pod "Alamofire"
+pod "RealmSwift"
 
 end
 
