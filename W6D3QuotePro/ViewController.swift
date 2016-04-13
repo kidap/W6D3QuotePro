@@ -9,8 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-  @IBOutlet var tableView: UITableView!
+  @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var tableHeader: UIView!
   var sourceArray = [Quote]()
+  let kheaderHeight:CGFloat = 100
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -18,6 +20,13 @@ class ViewController: UIViewController {
     
     tableView.delegate = self
     tableView.dataSource = self
+    
+    tableView.tableHeaderView = nil
+    tableView.addSubview(tableHeader)
+    
+    tableView.contentInset.top = kheaderHeight
+    tableView.contentOffset.y = -kheaderHeight
+    
   }
   
   @IBAction func createNew(sender: AnyObject) {
@@ -25,6 +34,10 @@ class ViewController: UIViewController {
     destinationVC.quote = Quote()
     destinationVC.delegate = self
     presentViewController(destinationVC, animated: true, completion: nil)
+  }
+  
+  override func prefersStatusBarHidden() -> Bool {
+    return true
   }
 }
 
@@ -39,7 +52,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
     cell.textLabel?.text = sourceArray[indexPath.row].text
     cell.detailTextLabel?.text = sourceArray[indexPath.row].by
     cell.accessoryView = UIImageView(image: sourceArray[indexPath.row].photo!.image)
-    cell.accessoryView?.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+    cell.accessoryView?.frame = CGRect(x: 0, y: 0, width: 45, height: 45)
     return cell
   }
   
@@ -55,6 +68,14 @@ extension ViewController:QuoteProtocol{
     sourceArray.append(quote)
     print(sourceArray.count)
     tableView.reloadData()
+  }
+}
+
+extension ViewController: UIScrollViewDelegate{
+  func scrollViewDidScroll(scrollView: UIScrollView) {
+    print(scrollView)
+    tableHeader.frame.origin.y = scrollView.contentOffset.y
+    tableHeader.frame.size.height = -scrollView.contentOffset.y
   }
 }
 

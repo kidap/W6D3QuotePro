@@ -119,5 +119,7 @@ class QuoteViewController: UIViewController {
       
     }
   }
-  
 }
+
+
+
